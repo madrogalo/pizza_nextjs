@@ -1,0 +1,21 @@
+.button_filter {
+  user-select: none;
+  height: 46px;
+  background: #F9F9F9;
+  border-radius: 30px;
+  padding: 13px 25px;
+  font-weight: 600;
+  margin-right: 9px;
+}
+
+.button_filter_active {
+  user-select: none;
+  width: 82.11px;
+  height: 46px;
+  background: #282828;
+  border-radius: 30px;
+  color: #FFFFFF;
+  padding: 13px 25px;
+  font-weight: 600;
+  margin-right: 9px;
+}

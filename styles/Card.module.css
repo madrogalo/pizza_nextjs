@@ -1,0 +1,124 @@
+
+.card {
+  min-height: 440px;
+  width: 281px;
+  margin-right: 40px;
+  margin-top: 65px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-around;
+  width: 280px;
+  height: 85px;
+  background: #F3F3F3;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.option_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 132px;
+  height: 32px;
+  background: #F3F3F3;
+  border-radius: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.option_button_active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 132px;
+  height: 32px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.option_button_size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 86px;
+  height: 32px;
+  background: #F3F3F3;
+  border-radius: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.option_button_size_active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 86px;
+  height: 32px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.price_and_add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 17px;
+}
+
+.price {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  color: #000000;
+}
+
+.add_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 132px;
+  height: 40px;
+  left: 890px;
+  top: 792px;
+  background: #FFFFFF;
+  border: 1px solid #EB5A1E;
+  border-radius: 30px;
+  color: #EB5A1E;
+}
+
+.add_button:hover {
+  background: #EB5A1E;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.countPizza {
+  width: 22px;
+  height: 22px;
+  background: #EB5A1E;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 10px;
+}

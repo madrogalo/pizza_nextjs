@@ -1,0 +1,17 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonBlock {
+  display: flex;
+  margin: 40px 0px 32px 67px;
+}
+
+.select_block{
+  width: 230px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 48px 32px 0;
+}
