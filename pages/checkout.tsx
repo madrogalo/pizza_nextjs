@@ -1,5 +1,6 @@
 import React from 'react'
 import type { NextPage } from 'next'
+import { useSelector } from 'react-redux'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
@@ -11,6 +12,7 @@ import CheckoutButton from '../components/buttons/CheckoutButton'
 import styles from '../styles/Checkout.module.css'
 
 const Checkout: NextPage = () => {
+  const checkout = useSelector<any>((state) => state.checkout)
   const arr = [
     {
       id: 132344,
@@ -80,14 +82,14 @@ const Checkout: NextPage = () => {
           </div>
         </div>
         {
-          arr.map((item) => (
+          checkout.map((item) => (
             <CardCheckout 
               key={item.id}
               srcImg={item.srcImg}
               pizzaName={item.pizzaName} 
               dough={item.dough}
-              sizes={item.sizes}          
-              prices={item.prices}
+              size={item.size}          
+              price={item.price}
             />
           ))
         }

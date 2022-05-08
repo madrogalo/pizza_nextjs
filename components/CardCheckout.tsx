@@ -5,11 +5,11 @@ import Image from 'next/image'
 interface ICardCheckout {
   srcImg: string,
   pizzaName: string,
-  dough: Array<string>,
-  sizes: Array<number>,
-  prices: Array<number>
+  dough: string,
+  size: number,
+  price: number,
 }
-const CardCheckout = ({ srcImg, pizzaName, dough, sizes, prices }: ICardCheckout) => {
+const CardCheckout = ({ srcImg, pizzaName, dough, size, price }: ICardCheckout) => {
   return (
     <div className={styles.card_checkout}>
 
@@ -25,7 +25,7 @@ const CardCheckout = ({ srcImg, pizzaName, dough, sizes, prices }: ICardCheckout
             {pizzaName}
           </div>
           <div className={styles.card_description_goods_yard}>
-            {dough[0]}, {sizes[0]} см.
+            {dough}, {size} см.
           </div>
 
         </div>
@@ -47,7 +47,7 @@ const CardCheckout = ({ srcImg, pizzaName, dough, sizes, prices }: ICardCheckout
         />
       </div>
 
-      <div className={styles.card_description_price}>{prices[0]} ₴</div>
+      <div className={styles.card_description_price}>{price} ₴</div>
 
       <div className={styles.card_description_delete}>
         <Image

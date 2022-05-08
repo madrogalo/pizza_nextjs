@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux'
+import pizzaMenu from './reducers/pizzaMenu.reducer'
+import checkoutReducer from './reducers/checkout.reducer'
 import * as types from './types'
 
 // COUNTER REDUCER
@@ -34,10 +36,23 @@ const timerReducer = (state = initialTimerState, { type, payload }) => {
   }
 }
 
+// const initialState = {
+//   ddd: ''
+// }
+
+// const pizzaM = (state = initialState,  { type, payload } ) => {
+//   switch(true) {
+//     default:
+//       return state
+//   }
+// }
+
 // COMBINED REDUCERS
 const reducers = {
   counter: counterReducer,
   timer: timerReducer,
+  pizza: pizzaMenu,
+  checkout: checkoutReducer
 }
 
 export default combineReducers(reducers)

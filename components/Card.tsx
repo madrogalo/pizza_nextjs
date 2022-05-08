@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { addToCheckout } from '../actions/addToCheckout.actions'
+
 import styles from '../styles/Card.module.css'
 import Image from 'next/image'
 
 interface ICard {
+  id: number;
   srcImg: string;
   pizzaName: string;
   dough: Array<string>;
@@ -11,7 +16,7 @@ interface ICard {
   isCountPizza?: boolean;
 }
 
-const Card = ({ srcImg, pizzaName, dough, sizes, prices, isCountPizza }: ICard) => {
+const Card = ({ srcImg, pizzaName, dough, sizes, prices, isCountPizza, id }: ICard) => {
 
   const [doughState, setDoughState] = useState(dough[0])
   const [sizeState, setSizeState] = useState(sizes[0])
@@ -25,13 +30,19 @@ const Card = ({ srcImg, pizzaName, dough, sizes, prices, isCountPizza }: ICard) 
     setPriceState(prices[getIndexFromSizes])
   }
 
+  const dispatch = useDispatch()
+
   const handleAddToCard = () => {
     const pizza = {
+      id,
+      srcImg,
+      pizzaName,
       dough: doughState,
       size: sizeState,
       price: priceState
     }
     console.log('add pizza', pizza);
+    dispatch(addToCheckout(pizza))
   }
 
   return (
