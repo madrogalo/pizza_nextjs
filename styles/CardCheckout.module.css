@@ -1,0 +1,59 @@
+.card_checkout {
+  display: flex;
+  justify-content: space-between;
+  height: 140px;
+  width: 820px;
+  border-top: 1px solid #F4F4F4;
+}
+
+.card_description {
+  display: flex;
+  align-items: center;
+  width: 375px;
+  height: 140px;
+}
+
+.card_description_block {
+  margin-left: 15px;
+}
+
+.card_description_name {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.card_description_goods_yard {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  color: #8D8D8D;
+}
+
+.card_description_quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.card_description_price {
+  font-weight: 600;
+  font-size: 22px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+
+.card_description_delete {
+  display: flex;
+  align-items: center;
+}

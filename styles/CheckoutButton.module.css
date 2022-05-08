@@ -1,0 +1,29 @@
+
+.checkout_button_back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 211px;
+  height: 55px;
+  background: #FFFFFF;
+  border: 1px solid #D3D3D3;
+  border-radius: 30px;
+  font-weight: 300;
+  font-size: 16px;
+  color: #CACACA;
+  cursor: pointer;
+}
+
+.checkout_button_pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 211px;
+  height: 55px;
+  background: #FE5F1E;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
