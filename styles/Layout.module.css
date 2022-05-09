@@ -1,7 +1,7 @@
 
 .main_container {
   width: 1340px;
-  height: 1409px;
+  min-height: 600px;
   left: 45px;
   top: 43px;
   background: #FFFFFF;

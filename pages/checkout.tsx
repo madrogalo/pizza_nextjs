@@ -1,9 +1,10 @@
 import React from 'react'
 import type { NextPage } from 'next'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
+import { cleareCheckout } from '../actions/cleareCheckout.actions'
 
 import CardCheckout from '../components/CardCheckout'
 import Title from '../components/Title'
@@ -11,50 +12,31 @@ import CheckoutButton from '../components/buttons/CheckoutButton'
 
 import styles from '../styles/Checkout.module.css'
 
+interface IPizza {
+  map(arg0: (item: IPizza) => JSX.Element): React.ReactNode
+  length: any,
+  id: number,
+  srcImg: string,
+  pizzaName: string,
+  price: number,
+  dough:  string,
+  size: number,
+  isCountPizza: boolean,
+  reduce: any
+}
 const Checkout: NextPage = () => {
-  const checkout = useSelector<any>((state) => state.checkout)
-  const arr = [
-    {
-      id: 132344,
-      srcImg: '/images/pizzas/cheeseburger-pizza.svg',
-      pizzaName: 'Чізбургер-піца',
-      prices: [120, 160, 190],
-      dough: ['тонке', 'традиційне'],
-      sizes: [26, 30, 40],
-      isCountPizza: true
-    },
-    {
-      id: 2,
-      srcImg: '/images/pizzas/cheese-pizza.svg',
-      pizzaName: 'Сирна',
-      prices: [140, 180, 210],
-      dough: ['тонке', 'традиційне'],
-      sizes: [26, 30, 40],
-      isCountPizza: false
-    },
-    {
-      id: 332435,
-      srcImg: '/images/pizzas/asian-pizza.svg',
-      pizzaName: 'Креветки по-азійськи',
-      prices: [110, 130, 160],
-      dough: ['тонке', 'традиційне'],
-      sizes: [26, 30, 40],
-      isCountPizza: false
-    },
-    {
-      id: 423233,
-      srcImg: '/images/pizzas/cheese-chicken-pizza.svg',
-      pizzaName: 'Сирне курча',
-      prices: [115, 135, 155],
-      dough: ['тонке', 'традиційне'],
-      sizes: [26, 30, 40],
-      isCountPizza: false
-    }
-  ]
+  const checkout = useSelector<any, IPizza>((state) => state.checkout)
+  const sum = checkout.reduce((acc: number, currentValue: { price: number }) => acc + currentValue.price, 0)
 
   const router = useRouter()
   const goToHome = () => {
     router.push('/')
+  }
+
+  const dispatch = useDispatch()
+
+  const handleCleareCheckout = () => {
+    dispatch(cleareCheckout())
   }
 
   return (
@@ -71,7 +53,10 @@ const Checkout: NextPage = () => {
             <Title text='Кошик' />
           </div>
           
-          <div className={styles.order_header_right}>
+          <div 
+            className={styles.order_header_right}
+            onClick={handleCleareCheckout}  
+          >
             <Image 
                 height={20} 
                 width={20} 
@@ -82,9 +67,10 @@ const Checkout: NextPage = () => {
           </div>
         </div>
         {
-          checkout.map((item) => (
+          checkout.map((item: IPizza) => (
             <CardCheckout 
               key={item.id}
+              id={item.id}
               srcImg={item.srcImg}
               pizzaName={item.pizzaName} 
               dough={item.dough}
@@ -96,7 +82,7 @@ const Checkout: NextPage = () => {
         <div className={styles.order_footer}>
           <div className={styles.order_footer_left}>
             <div className={styles.order_footer_text}>
-              Всього піц: <span>3 шт.</span>
+              Всього піц: <span>{checkout.length} шт.</span>
             </div>
             <CheckoutButton
                 styleButton='button_back'
@@ -107,7 +93,7 @@ const Checkout: NextPage = () => {
           </div>
           <div className={styles.order_footer_right}>
             <div className={styles.order_footer_text}>
-              Сума замовлення: <span className={styles.orange}>900 ₴</span>
+              Сума замовлення: <span className={styles.orange}>{sum} ₴</span>
             </div>
             <CheckoutButton 
               styleButton='button_pay'
@@ -116,6 +102,7 @@ const Checkout: NextPage = () => {
             />
           </div>
         </div>
+        <div style={{ width: '100%', height: '100px'}} />
       </div>
     </div>
   )

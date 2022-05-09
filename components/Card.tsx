@@ -41,7 +41,6 @@ const Card = ({ srcImg, pizzaName, dough, sizes, prices, isCountPizza, id }: ICa
       size: sizeState,
       price: priceState
     }
-    console.log('add pizza', pizza);
     dispatch(addToCheckout(pizza))
   }
 
