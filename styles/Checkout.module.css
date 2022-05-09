@@ -32,6 +32,7 @@
   line-height: 19px;
   color: #B6B6B6;
   min-width: 200px;
+  cursor: pointer;
 }
 
 .order_footer {
