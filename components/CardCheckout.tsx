@@ -10,9 +10,10 @@ interface ICardCheckout {
   dough: string,
   size: number,
   price: number,
-  id: number
+  id: number,
+  quantity: number
 }
-const CardCheckout = ({ srcImg, pizzaName, dough, size, price, id }: ICardCheckout) => {
+const CardCheckout = ({ srcImg, pizzaName, dough, size, price, id, quantity }: ICardCheckout) => {
 
   const dispatch = useDispatch()
 
@@ -48,7 +49,7 @@ const CardCheckout = ({ srcImg, pizzaName, dough, size, price, id }: ICardChecko
           height={32}
           alt='count-plus'
         />
-        5
+        {quantity}
         <Image
           src='/images/count-minus.svg'
           width={32}

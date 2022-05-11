@@ -14,6 +14,7 @@ interface ICard {
   sizes: Array<number>;
   prices: Array<number>;
   isCountPizza?: boolean;
+  quantity?: number, 
 }
 
 const Card = ({ srcImg, pizzaName, dough, sizes, prices, isCountPizza, id }: ICard) => {
@@ -39,7 +40,8 @@ const Card = ({ srcImg, pizzaName, dough, sizes, prices, isCountPizza, id }: ICa
       pizzaName,
       dough: doughState,
       size: sizeState,
-      price: priceState
+      price: priceState,
+      quantity: 1
     }
     dispatch(addToCheckout(pizza))
   }

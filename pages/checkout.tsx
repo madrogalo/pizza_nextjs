@@ -15,14 +15,15 @@ import styles from '../styles/Checkout.module.css'
 interface IPizza {
   map(arg0: (item: IPizza) => JSX.Element): React.ReactNode
   length: any,
-  id: number,
+  id: number | string,
   srcImg: string,
   pizzaName: string,
   price: number,
   dough:  string,
   size: number,
   isCountPizza: boolean,
-  reduce: any
+  reduce: any,
+  quantity?: number
 }
 const Checkout: NextPage = () => {
   const checkout = useSelector<any, IPizza>((state) => state.checkout)
@@ -76,6 +77,7 @@ const Checkout: NextPage = () => {
               dough={item.dough}
               size={item.size}          
               price={item.price}
+              quantity={item.quantity}
             />
           ))
         }

@@ -23,6 +23,7 @@ export default function GoToCheckoutButton() {
   }
 
   const checkout = useSelector<any, IPizza>((state) => state.checkout)
+  const quantityPizza = checkout.reduce((acc: number, currentValue: { quantity: number }) => acc + currentValue.quantity, 0)
   const sum = checkout.reduce((acc: number, currentValue: { price: number }) => acc + currentValue.price, 0)
   
   return (
@@ -42,7 +43,7 @@ export default function GoToCheckoutButton() {
         alt="cart" 
       />
       <div className={styles.header_buy_button_quantity}>
-        {checkout.length}
+        {quantityPizza}
       </div>
     </div>
   </div>
