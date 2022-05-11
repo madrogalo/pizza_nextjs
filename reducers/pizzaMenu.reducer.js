@@ -6,7 +6,8 @@ const initialState = [
     prices: [120, 160, 190],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: true
+    isCountPizza: true,
+    quantity: 1,
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ const initialState = [
     prices: [140, 180, 210],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: false
+    isCountPizza: false,
+    quantity: 1,
   },
   {
     id: 332435,
@@ -24,7 +26,8 @@ const initialState = [
     prices: [110, 130, 160],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: false
+    isCountPizza: false,
+    quantity: 1,
   },
   {
     id: 423233,
@@ -33,7 +36,8 @@ const initialState = [
     prices: [115, 135, 155],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: false
+    isCountPizza: false,
+    quantity: 1,
   },
   {
     id: 523333,
@@ -42,7 +46,8 @@ const initialState = [
     prices: [120, 160, 190],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: false
+    isCountPizza: false,
+    quantity: 1,
   },
   {
     id: 6233444,
@@ -51,7 +56,8 @@ const initialState = [
     prices: [140, 180, 210],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: false
+    isCountPizza: false,
+    quantity: 1,
   },
   {
     id: 73232323,
@@ -60,7 +66,8 @@ const initialState = [
     prices: [110, 130, 160],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: false
+    isCountPizza: false,
+    quantity: 1,
   },
   {
     id: 8323244,
@@ -69,7 +76,8 @@ const initialState = [
     prices: [115, 135, 155],
     dough: ['тонке', 'традиційне'],
     sizes: [26, 30, 40],
-    isCountPizza: false
+    isCountPizza: false,
+    quantity: 1,
   },
 ]
 
