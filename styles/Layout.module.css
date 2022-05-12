@@ -19,6 +19,7 @@
 }
 .header_logo {
   margin: 49px 77px 0px;
+  cursor: pointer;
 }
 .header_buy_button {
   display: flex;
@@ -31,6 +32,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .header_buy_button_left {
