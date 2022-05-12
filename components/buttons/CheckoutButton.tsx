@@ -1,12 +1,6 @@
 import Image from 'next/image'
 import styles from '../../styles/CheckoutButton.module.css'
-
-interface ICheckoutButton {
-  text: string,
-  icon?: boolean,
-  styleButton: 'button_back' | 'button_pay',
-  onClick: any
-}
+import { ICheckoutButton } from '../../interfaces'
 
 const CheckoutButton = ({ text, icon, styleButton, onClick }: ICheckoutButton) => {
   return (

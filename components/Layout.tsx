@@ -4,11 +4,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '../styles/Layout.module.css'
 import Image from 'next/image'
+import { ILayout } from '../interfaces'
 import GoToCheckoutButton from '../components/buttons/GoToCheckoutButton'
-
-interface ILayout {
-  children: JSX.Element
-}
 
 function Layout({ children }: ILayout) {
   const router = useRouter()

@@ -5,28 +5,16 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import { cleareCheckout } from '../actions/cleareCheckout.actions'
-
+import { IPizzaCheckout } from '../interfaces'
 import CardCheckout from '../components/CardCheckout'
 import Title from '../components/Title'
 import CheckoutButton from '../components/buttons/CheckoutButton'
 
 import styles from '../styles/Checkout.module.css'
 
-interface IPizza {
-  map(arg0: (item: IPizza) => JSX.Element): React.ReactNode
-  length: any,
-  id: number | string,
-  srcImg: string,
-  pizzaName: string,
-  price: number,
-  dough:  string,
-  size: number,
-  isCountPizza: boolean,
-  reduce: any,
-  quantity?: number
-}
+
 const Checkout: NextPage = () => {
-  const checkout = useSelector<any, IPizza>((state) => state.checkout)
+  const checkout = useSelector<any, IPizzaCheckout>((state) => state.checkout)
   const sum = checkout.reduce((acc: number, currentValue: { price: number }) => acc + currentValue.price, 0)
 
   const router = useRouter()

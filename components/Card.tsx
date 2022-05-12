@@ -3,19 +3,11 @@ import { useDispatch } from 'react-redux'
 
 import { addToCheckout } from '../actions/addToCheckout.actions'
 
+import { ICard } from '../interfaces'
 import styles from '../styles/Card.module.css'
 import Image from 'next/image'
 
-interface ICard {
-  id: number;
-  srcImg: string;
-  pizzaName: string;
-  dough: Array<string>;
-  sizes: Array<number>;
-  prices: Array<number>;
-  isCountPizza?: boolean;
-  quantity?: number, 
-}
+
 
 const Card = ({ srcImg, pizzaName, dough, sizes, prices, isCountPizza, id }: ICard) => {
 
