@@ -1,22 +1,10 @@
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import Image from 'next/image'
+import { IPizza } from '../../interfaces'
 import styles from '../../styles/Layout.module.css'
 
-interface IPizza {
-  length: any,
-  id: number,
-  srcImg: string,
-  pizzaName: string,
-  prices: Array<number>,
-  dough:  Array<string>,
-  sizes: Array<number>,
-  isCountPizza: boolean,
-  reduce: any
-}
-
 export default function GoToCheckoutButton() {
-
   const router = useRouter()
   const goToCheckout = () => {
     router.push('checkout')

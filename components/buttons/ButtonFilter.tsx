@@ -1,9 +1,5 @@
 import styles from '../../styles/ButtonFilter.module.css'
-
-interface IButtonFilter {
-  text?: string,
-  active?: boolean
-}
+import { IButtonFilter } from '../../interfaces'
 
 export default function ButtonFilter({text, active}: IButtonFilter) {
   return (

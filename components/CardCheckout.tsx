@@ -3,18 +3,11 @@ import { delleteFromCheckout } from '../actions/delleteFromCheckout.actions'
 import { addOnePizzaCheckout } from '../actions/addOnePizzaCheckout.actions'
 import { deleteOnePizzaCheckout } from '../actions/deleteOnePizzaCheckout.actions'
 import { useDispatch } from 'react-redux'
+import { ICardCheckout } from '../interfaces'
 import styles from '../styles/CardCheckout.module.css'
 import Image from 'next/image'
 
-interface ICardCheckout {
-  srcImg: string,
-  pizzaName: string,
-  dough: string,
-  size: number,
-  price: number,
-  id: number,
-  quantity: number
-}
+
 const CardCheckout = ({ srcImg, pizzaName, dough, size, price, id, quantity }: ICardCheckout) => {
 
   const dispatch = useDispatch()
