@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import { useSelector, useDispatch } from 'react-redux'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-
+import { postOrderData } from '../utils'
 import { cleareCheckout } from '../actions/cleareCheckout.actions'
 import { IPizzaCheckout } from '../interfaces'
 import CardCheckout from '../components/CardCheckout'
@@ -28,12 +28,17 @@ const Checkout: NextPage = () => {
     dispatch(cleareCheckout())
   }
 
+  const handlePay = () => {
+    console.log('handle Pay', checkout)
+    postOrderData('https://bot-test-blog.herokuapp.com', JSON.stringify(checkout))
+    .finally(() => handleCleareCheckout())
+  }
   return (
     <div className={styles.content}>
       <div className={styles.order_block}>
         <div className={styles.order_header}>
           <div className={styles.order_header_left}>
-            <Image 
+            <Image
               height={29} 
               width={29} 
               src='/images/shopping-cart.svg'
@@ -56,7 +61,7 @@ const Checkout: NextPage = () => {
           </div>
         </div>
         {
-          checkout.map((item: IPizza) => (
+          checkout.map((item: any) => (
             <CardCheckout 
               key={item.id}
               id={item.id}
@@ -88,7 +93,7 @@ const Checkout: NextPage = () => {
             <CheckoutButton 
               styleButton='button_pay'
               text='Оплатити зараз'
-              onClick={() => console.log('pay')}
+              onClick={handlePay}
             />
           </div>
         </div>

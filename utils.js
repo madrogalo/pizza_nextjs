@@ -38,3 +38,18 @@ const hero2 = {
 };
 
 console.log(deepEqual(hero1, hero2))
+
+
+export const postOrderData = async (url, data) => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  return await fetch(url, {
+  method: 'POST',
+  headers: myHeaders,
+  body: data,
+  redirect: 'follow'
+})
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
